@@ -21,7 +21,7 @@ export default {
   name: 'Board',
   computed: {
     blockColor () {
-      return this.$store.state.blockColor
+      return this.$store.state.selectedBlockColor
     }
   }
 }

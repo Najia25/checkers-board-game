@@ -1,5 +1,6 @@
 // import store from './index'
 
 export default {
-  blockColor: "#374360"
+  selectedBlockColor: "#374360",
+  blockColors: ["#374360", "#00796B", "#0277BD"]
 }

@@ -1,21 +1,33 @@
 <template>
   <div class="settings">
     <v-card>
-      <v-card-title>Choose block color:</v-card-title>
+      <v-card-title>Choose block color</v-card-title>
       <v-card-text>
-        <v-btn-toggle v-model="blockColor" mandatory>
+        <v-btn-toggle class="d-flex justify-space-around" v-model="blockColor" mandatory>
           <v-btn
-            color="#374360"
+            v-for="color in blockColors"
+            :key="color"
+            :color="color"
             x-small
-            value="#374360"
+            :value="color"
             fab
-            class="mr-2"
           >
           </v-btn>
+        </v-btn-toggle>
+      </v-card-text>
+      <v-divider class="my-2"></v-divider>
+      <v-card-title>Choose piece color</v-card-title>
+      <v-card-text>
+        <div class="subtitle-1">
+        First Team
+        </div>
+        <v-btn-toggle v-model="blockColor" mandatory>
           <v-btn
-            color="#00796B"
+            v-for="color in blockColors"
+            :key="color"
+            :color="color"
             x-small
-            value="#00796B"
+            :value="color"
             fab
           >
           </v-btn>
@@ -30,6 +42,11 @@ export default {
   data () {
     return {
       blockColor: ''
+    }
+  },
+  computed: {
+    blockColors () {
+      return this.$store.state.blockColors
     }
   },
   watch: {
