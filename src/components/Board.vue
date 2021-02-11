@@ -28,7 +28,4 @@ export default {
   width: 55px;
   background: #ECF0F1;
 }
-.dark-background {
-  background: blue;
-}
 </style>
