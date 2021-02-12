@@ -26,12 +26,11 @@
         <v-btn-toggle class="d-flex justify-space-around" v-model="pieceColorFirstTeam" mandatory>
           <v-btn
             v-for="item in pieceColors"
-            :key="item.color"
-            :style="{background: item.color}"
+            :key="item"
+            :style="{background: item}"
             x-small
-            @change="selectedItem = item.id"
-            :value="item.color"
-            :disabled="selectedItem === item.id"
+            :value="item"
+            :disabled="item === selectedPieceColorSecondTeam"
             fab
           >
           </v-btn>
@@ -43,12 +42,11 @@
         <v-btn-toggle class="d-flex justify-space-around" v-model="pieceColorSecondTeam" mandatory>
           <v-btn
             v-for="item in pieceColors"
-            :key="item.color"
-            :style="{background: item.color}"
+            :key="item"
+            :style="{background: item}"
             x-small
-            @change="selectedItem = item.id"
-            :value="item.color"
-            :disabled="selectedItem === item.id"
+            :value="item"
+            :disabled="item === selectedPieceColorFirstTeam"
             fab
           >
           </v-btn>
@@ -59,31 +57,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
       blockColor: '',
       pieceColorFirstTeam: '',
-      pieceColorSecondTeam: '',
-      selectedItem: 0
+      pieceColorSecondTeam: ''
     }
   },
   computed: {
-    blockColors () {
-      return this.$store.state.blockColors
-    },
-    pieceColors () {
-      return this.$store.state.pieceColors
-    }
-
-  },
-  created () {
-    let count = 1;
-    
-    this.pieceColors.forEach(el => {
-      el.id = count
-      count++
-    })
+    ...mapState(['blockColors', 'pieceColors', 'selectedPieceColorFirstTeam', 'selectedPieceColorSecondTeam'])
   },
   watch: {
     blockColor () {
