@@ -14,8 +14,10 @@
       <!-- display piece where row(x) and column(y) both are even and where row(x) and column(y) both are odd -->
       <!-- hide piece in the middle two rows -->
       <Piece
-        v-if="( (x % 2 && y % 2) || (!(x % 2) && !(y % 2)) )"
+        v-if="(x % 2 && y % 2) || (!(x % 2) && !(y % 2))"
         :class="{'d-none': (x === size / 2 || x === (size / 2) + 1)}"
+        :isFirstTeam="x < size / 2"
+        :isSecondTeam="x > (size / 2) + 1"
       />
       </div>
     </div>
@@ -28,7 +30,8 @@ export default {
   name: 'Board',
   data () {
     return {
-      size: 8
+      size: 8,
+
     }
   },
   components: {

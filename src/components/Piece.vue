@@ -1,11 +1,18 @@
 <template>
-  <div class="piece">
+  <div
+  class="piece"
+  :style="[isFirstTeam && { background: selectedPieceColorFirstTeam }, isSecondTeam && { background: selectedPieceColorSecondTeam}]"
+  >
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-
+  props: ['isFirstTeam', 'isSecondTeam'],
+  computed: {
+    ...mapState(['selectedPieceColorFirstTeam', 'selectedPieceColorSecondTeam'])
+  }
 }
 </script>
 
@@ -14,7 +21,7 @@ export default {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: red;
+  // background: red;
   position: absolute;
   top: 50%;
   left: 50%;
