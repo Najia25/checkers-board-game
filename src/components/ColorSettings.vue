@@ -23,14 +23,14 @@
         <div class="subtitle-1">
         First Team
         </div>
-        <v-btn-toggle class="d-flex justify-space-around" v-model="pieceColorFirstTeam" mandatory>
+        <v-btn-toggle class="d-flex justify-space-around" v-model="pieceColorFirstTeam">
           <v-btn
             v-for="item in pieceColors"
             :key="item"
             :style="{background: item}"
             x-small
             :value="item"
-            :disabled="item === selectedPieceColorSecondTeam"
+            :class="{'disable-events': item === selectedPieceColorSecondTeam}"
             fab
           >
           </v-btn>
@@ -39,14 +39,14 @@
         <div class="subtitle-1">
           Second Team
         </div>
-        <v-btn-toggle class="d-flex justify-space-around" v-model="pieceColorSecondTeam" mandatory>
+        <v-btn-toggle class="d-flex justify-space-around" v-model="pieceColorSecondTeam">
           <v-btn
             v-for="item in pieceColors"
             :key="item"
             :style="{background: item}"
             x-small
             :value="item"
-            :disabled="item === selectedPieceColorFirstTeam"
+            :class="{'disable-events': item === selectedPieceColorFirstTeam}"
             fab
           >
           </v-btn>
@@ -84,5 +84,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.disable-events {
+  pointer-events: none;
+}
 </style>
