@@ -11,14 +11,21 @@
         :key="y"
         :style="[(!(x % 2) && y % 2) || ((x % 2) && !(y % 2)) ? { background: blockColor} : null]"
       >
+      <Piece
+        v-if="((x % 2) && y % 2) || (!(x % 2) && !(y % 2))"
+      />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Piece from './Piece'
 export default {
   name: 'Board',
+  components: {
+    Piece
+  },
   computed: {
     blockColor () {
       return this.$store.state.selectedBlockColor
