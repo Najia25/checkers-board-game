@@ -2,6 +2,7 @@
   <div
   class="piece"
   :style="[isFirstTeam && { background: selectedPieceColorFirstTeam }, isSecondTeam && { background: selectedPieceColorSecondTeam}]"
+  @click="handleCLick"
   >
   </div>
 </template>
@@ -11,7 +12,17 @@ import { mapState } from 'vuex'
 export default {
   props: ['isFirstTeam', 'isSecondTeam', 'id'],
   computed: {
-    ...mapState(['selectedPieceColorFirstTeam', 'selectedPieceColorSecondTeam'])
+    ...mapState(['selectedPieceColorFirstTeam', 'selectedPieceColorSecondTeam', 'turn'])
+  },
+  methods: {
+    handleCLick () {
+      const piece = {
+        id: this.id,
+        isFirstTeam: this.isFirstTeam,
+        isSecondTeam: this.isSecondTeam
+      }
+      this.$store.dispatch('getPlayerPieces', piece)
+    }
   }
 }
 </script>

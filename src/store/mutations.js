@@ -7,5 +7,8 @@ export default {
   },
   changePieceColorSecondTeam (state, payload) {
     state.selectedPieceColorSecondTeam = payload
+  },
+  setPlayerPieces (state, payload) {
+    state.player.playerPieces.push(payload)
   }
 }

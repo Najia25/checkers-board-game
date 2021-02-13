@@ -35,6 +35,9 @@
     },
     computed: {
       ...mapState(['selectedPieceColorFirstTeam', 'selectedPieceColorSecondTeam', 'player'])
-    }
+    },
+    // created () {
+
+    // }
   }
 </script>
