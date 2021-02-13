@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex justify-center">
+  <v-container class="d-flex justify-center flex-wrap">
     <Board />
     <ColorSettings />
   </v-container>

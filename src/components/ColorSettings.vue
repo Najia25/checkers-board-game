@@ -30,7 +30,7 @@
             :style="{background: item}"
             x-small
             :value="item"
-            :class="{'disable-events': item === selectedPieceColorSecondTeam}"
+            :class="{'disable-events': item === selectedPieceColorSecondTeam || item === selectedPieceColorFirstTeam}"
             fab
           >
           </v-btn>
@@ -46,7 +46,7 @@
             :style="{background: item}"
             x-small
             :value="item"
-            :class="{'disable-events': item === selectedPieceColorFirstTeam}"
+            :class="{'disable-events': item === selectedPieceColorSecondTeam || item === selectedPieceColorFirstTeam}"
             fab
           >
           </v-btn>

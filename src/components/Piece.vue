@@ -9,7 +9,7 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  props: ['isFirstTeam', 'isSecondTeam'],
+  props: ['isFirstTeam', 'isSecondTeam', 'id'],
   computed: {
     ...mapState(['selectedPieceColorFirstTeam', 'selectedPieceColorSecondTeam'])
   }
