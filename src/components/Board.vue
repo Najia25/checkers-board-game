@@ -11,8 +11,10 @@
         :key="columnindex"
         :style="[(!(row % 2) && column % 2) || (row % 2 && !(column % 2)) ? { background: blockColor} : null]"
       >
+      
       <!-- display piece where row(x) and column(y) both are even and where row(x) and column(y) both are odd -->
       <!-- hide piece in the middle two rows -->
+
       <Piece
         v-if="(row % 2 && column % 2) || (!(row % 2) && !(column % 2))"
         :class="{'d-none': (row === size / 2 || row === (size / 2) + 1)}"

@@ -17,7 +17,7 @@ export default {
     null, 58, null, 60, null, 62, null, 64
   ],
   player: {
-    turn: true,
+    turn: true, // if true firstteam's turn, else second team
     playerPieces: []
   },
   selectedPiece: {
