@@ -16,12 +16,10 @@ export default {
     49, null, 51, null, 53, null, 55, null,
     null, 58, null, 60, null, 62, null, 64
   ],
-  player: {
-    turn: true, // if true firstteam's turn, else second team
-    playerPieces: []
-  },
+  playerTurn: true, // if true firstteam's turn, else second team
+
   selectedPiece: {
-    pieceId: -1,
+    pieceId: 0,
     indexOfBoard: -1,
     seventhSpace: false,
     ninthSpace: false,

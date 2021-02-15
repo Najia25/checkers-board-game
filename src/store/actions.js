@@ -1,13 +1,14 @@
 export default {
-  getPlayerPieces ({ commit, state }, piece) {
-    if(state.player.turn) {
-      if(piece.isFirstTeam) {
-        commit('setPlayerPieces', piece.id)
-      }
-    } else {
-      if(piece.isSecondTeam) {
-        commit('setPlayerPieces', piece.id)
-      }
-    }
+
+  checkValidMoves ({ commit, dispatch }, pieceId) {
+    commit('setSelectedPieceId', pieceId)
+    dispatch('findPieceOnBoard')
+    // getAvailableSpaces()
+  },
+
+  // gets ID and index of the board cell its on
+  findPieceOnBoard ({ state, commit }) {
+    const indexOfBoardPiece = state.board.indexOf(state.selectedPiece.pieceId)
+    commit('setIndexOfBoardPiece', indexOfBoardPiece)
   }
 }

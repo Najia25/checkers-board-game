@@ -7,8 +7,12 @@
 
       <v-card>
         <v-card-title class="headline grey lighten-2">
-          Choose Move
+          Click on a piece
         </v-card-title>
+
+        <v-card-subtitle>
+          Choose moves:
+        </v-card-subtitle>
 
         <v-card-text>
         </v-card-text>

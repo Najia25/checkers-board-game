@@ -16,12 +16,17 @@ export default {
   },
   methods: {
     handleCLick () {
-      const piece = {
-        id: this.id,
-        isFirstTeam: this.isFirstTeam,
-        isSecondTeam: this.isSecondTeam
+      if(this.id !== 0) {
+        if(turn) {
+          if(this.isFirstTeam) {
+            this.$store.dispatch('checkValidMoves', pieceId)
+          }
+        } else {
+          if(this.isSecondTeam) {
+            this.$store.dispatch('checkValidMoves', pieceId)
+          }
+        }
       }
-      this.$store.dispatch('getPlayerPieces', piece)
     }
   }
 }

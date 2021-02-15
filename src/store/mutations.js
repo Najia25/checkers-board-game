@@ -8,7 +8,10 @@ export default {
   changePieceColorSecondTeam (state, payload) {
     state.selectedPieceColorSecondTeam = payload
   },
-  setPlayerPieces (state, payload) {
-    state.player.playerPieces.push(payload)
+  setSelectedPieceId (state, payload) {
+    state.selectedPiece.pieceId = payload
+  },
+  setIndexOfBoardPiece (state, payload) {
+    state.selectedPiece.indexOfBoard = payload
   }
 }
